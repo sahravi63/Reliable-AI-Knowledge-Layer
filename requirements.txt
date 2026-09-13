@@ -1,0 +1,22 @@
+# Orchestration
+langgraph>=1.2.0
+
+# Vector DB + embeddings
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# LLM provider SDKs (install whichever you plan to use — Groq is the default)
+groq>=0.11.0
+openai>=1.50.0
+anthropic>=0.40.0
+google-genai>=0.3.0
+
+# Web search fallback
+tavily-python>=0.5.0
+
+# Evaluation
+ragas>=0.2.0
+
+# App / config
+streamlit>=1.38.0
+python-dotenv>=1.0.1

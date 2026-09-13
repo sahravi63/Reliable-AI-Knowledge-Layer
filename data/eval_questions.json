@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q01",
+    "category": "straightforward",
+    "question": "What is the internet reimbursement allowance for fully remote employees?",
+    "gold_answer": "INR 1,500 per month, per the Remote Work Equipment Policy (2025). Hybrid employees are not eligible.",
+    "gold_doc_ids": ["wfh-equipment-policy-2025"]
+  },
+  {
+    "id": "q02",
+    "category": "straightforward",
+    "question": "How many business days does it take to get reimbursed for a travel expense report?",
+    "gold_answer": "7 business days after submission with itemized receipts, per the Travel & Reimbursement Policy (2025).",
+    "gold_doc_ids": ["travel-reimbursement-policy-2025"]
+  },
+  {
+    "id": "q03",
+    "category": "straightforward",
+    "question": "Can I accept a vendor gift worth INR 8,000?",
+    "gold_answer": "No — the Code of Conduct requires gifts above INR 5,000 to be declined or surrendered to HR.",
+    "gold_doc_ids": ["code-of-conduct-2023"]
+  },
+  {
+    "id": "q04",
+    "category": "straightforward",
+    "question": "What's the one-time home-office stipend for remote employees?",
+    "gold_answer": "INR 25,000, self-approved via the HR portal, per the Remote Work Equipment Policy (2025).",
+    "gold_doc_ids": ["wfh-equipment-policy-2025"]
+  },
+  {
+    "id": "q05",
+    "category": "straightforward",
+    "question": "Do I need manager approval for an international flight upgrade to premium economy?",
+    "gold_answer": "Yes, premium economy for flights over 8 hours is subject to manager approval, per the Travel & Reimbursement Policy (2025).",
+    "gold_doc_ids": ["travel-reimbursement-policy-2025"]
+  },
+  {
+    "id": "c01",
+    "category": "conflicting",
+    "question": "Can I approve this INR 3,00,000 purchase myself?",
+    "gold_answer": "CONFLICT: the 2025 general policy caps self-approval at INR 2,00,000 (so this would need manager + Finance sign-off), but if this is an Engineering cloud/SaaS purchase, the Engineering matrix allows self-approval up to INR 5,00,000. The answer depends on department and purchase type — should surface both and ask for clarification if department/category is unknown.",
+    "gold_doc_ids": ["proc-policy-2025", "dept-engineering-matrix-2025"]
+  },
+  {
+    "id": "c02",
+    "category": "conflicting",
+    "question": "What is the current self-approval threshold for a general (non-departmental) purchase?",
+    "gold_answer": "INR 2,00,000, per the 2025 policy, which explicitly supersedes the 2024 policy's INR 5,00,000 threshold. The 2025 doc's version/date should resolve this without needing to surface a conflict.",
+    "gold_doc_ids": ["proc-policy-2025"]
+  },
+  {
+    "id": "c03",
+    "category": "conflicting",
+    "question": "As a Marketing manager, can I self-approve a INR 2,50,000 campaign spend?",
+    "gold_answer": "CONFLICT/nuance: the Marketing matrix allows self-approval up to INR 3,00,000 for campaign/media-buy spend specifically, which would cover this. But it's higher than the general 2025 policy's INR 2,00,000 cap, and the Marketing matrix (2024) doesn't explicitly state it overrides the newer 2025 general policy the way the Engineering matrix does. A careful system should flag this ambiguity rather than confidently picking one.",
+    "gold_doc_ids": ["dept-marketing-matrix-2024", "proc-policy-2025"]
+  },
+  {
+    "id": "c04",
+    "category": "conflicting",
+    "question": "What was the procurement self-approval limit before the current policy?",
+    "gold_answer": "INR 5,00,000 under the 2024 policy (superseded), and INR 1,00,000 per the 2022 handbook (explicitly noted as outdated/illustrative). The 2024 policy is the more authoritative 'previous' answer; the 2022 handbook should be treated as unreliable.",
+    "gold_doc_ids": ["proc-policy-2024", "employee-handbook-2022"]
+  },
+  {
+    "id": "c05",
+    "category": "conflicting",
+    "question": "Do I need a risk assessment for a purchase from a non-AVL vendor?",
+    "gold_answer": "Depends on amount: the 2025 policy requires a risk assessment only for non-AVL contracts over INR 10,00,000, plus the standard onboarding form for any non-AVL vendor. The 2024 policy only mentioned the onboarding form, no risk-assessment threshold — resolved by the 2025 version superseding 2024.",
+    "gold_doc_ids": ["proc-policy-2025", "proc-policy-2024"]
+  },
+  {
+    "id": "u01",
+    "category": "unanswerable",
+    "question": "What is the maternity leave policy and how many weeks of paid leave are provided?",
+    "gold_answer": "INSUFFICIENT EVIDENCE — no maternity/parental leave document exists in this corpus.",
+    "gold_doc_ids": []
+  },
+  {
+    "id": "u02",
+    "category": "unanswerable",
+    "question": "What is the process for requesting a company credit card?",
+    "gold_answer": "INSUFFICIENT EVIDENCE — no corporate card policy document exists in this corpus.",
+    "gold_doc_ids": []
+  },
+  {
+    "id": "u03",
+    "category": "unanswerable",
+    "question": "How much is the annual performance bonus for Engineering staff?",
+    "gold_answer": "INSUFFICIENT EVIDENCE — no compensation/bonus document exists in this corpus.",
+    "gold_doc_ids": []
+  },
+  {
+    "id": "u04",
+    "category": "unanswerable",
+    "question": "What is the equipment policy for the Sales department specifically?",
+    "gold_answer": "INSUFFICIENT EVIDENCE — only a company-wide Remote Work Equipment Policy exists; no Sales-specific matrix is in the corpus.",
+    "gold_doc_ids": []
+  },
+  {
+    "id": "u05",
+    "category": "unanswerable",
+    "question": "Can I expense alcohol at a client dinner if the client orders it?",
+    "gold_answer": "The Travel & Reimbursement Policy states alcohol is non-reimbursable under any circumstance — this is actually answerable and should NOT be flagged insufficient; included as a near-miss to test that the system doesn't over-flag.",
+    "gold_doc_ids": ["travel-reimbursement-policy-2025"]
+  }
+]

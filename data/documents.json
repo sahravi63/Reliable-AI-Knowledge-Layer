@@ -1,0 +1,77 @@
+[
+  {
+    "doc_id": "proc-policy-2024",
+    "title": "Procurement Policy (General)",
+    "version": "2024",
+    "effective_date": "2024-01-15",
+    "scope": "company-wide",
+    "department": null,
+    "superseded_by": "proc-policy-2025",
+    "text": "PROCUREMENT POLICY — Effective January 15, 2024\n\n1. Purpose\nThis policy governs how employees may purchase goods and services on behalf of the company.\n\n2. Self-Approval Threshold\nEmployees may self-approve purchases up to INR 5,00,000 (five lakh) without additional sign-off, provided the purchase is within their department's allocated budget.\n\n3. Purchases Above Threshold\nPurchases exceeding INR 5,00,000 require written approval from the employee's direct manager and the Finance Business Partner before the order is placed.\n\n4. Vendor Requirements\nAll vendors must be registered in the Approved Vendor List (AVL). Purchases from non-AVL vendors require a one-time vendor onboarding form.\n\n5. Reimbursement\nOut-of-pocket purchases are reimbursed within 10 business days of a correctly filed expense report.\n\n6. Review Cycle\nThis policy is reviewed annually every January."
+  },
+  {
+    "doc_id": "proc-policy-2025",
+    "title": "Procurement Policy (General)",
+    "version": "2025",
+    "effective_date": "2025-01-20",
+    "scope": "company-wide",
+    "department": null,
+    "supersedes": "proc-policy-2024",
+    "text": "PROCUREMENT POLICY — Effective January 20, 2025 (supersedes the 2024 version)\n\n1. Purpose\nThis policy governs how employees may purchase goods and services on behalf of the company. It replaces and supersedes the January 2024 Procurement Policy in full.\n\n2. Self-Approval Threshold\nEffective this version, employees may self-approve purchases up to INR 2,00,000 (two lakh) without additional sign-off, provided the purchase is within their department's allocated budget. This is a REDUCTION from the prior INR 5,00,000 limit, following the FY24 internal audit findings on procurement risk.\n\n3. Purchases Above Threshold\nPurchases exceeding INR 2,00,000 require written approval from the employee's direct manager and the Finance Business Partner before the order is placed. Purchases exceeding INR 20,00,000 additionally require CFO sign-off.\n\n4. Vendor Requirements\nAll vendors must be registered in the Approved Vendor List (AVL). Purchases from non-AVL vendors require a one-time vendor onboarding form and a risk assessment for contracts over INR 10,00,000.\n\n5. Reimbursement\nOut-of-pocket purchases are reimbursed within 10 business days of a correctly filed expense report.\n\n6. Review Cycle\nThis policy is reviewed annually every January. Departments with their own approval matrices (see department-specific policies) should consult those first for any figure that conflicts with this general policy."
+  },
+  {
+    "doc_id": "dept-engineering-matrix-2025",
+    "title": "Engineering Department Approval Matrix",
+    "version": "2025",
+    "effective_date": "2025-02-01",
+    "scope": "department",
+    "department": "Engineering",
+    "text": "ENGINEERING DEPARTMENT APPROVAL MATRIX — Effective February 1, 2025\n\nThis matrix applies specifically to the Engineering department and overrides the general Procurement Policy's self-approval threshold for Engineering purchases only.\n\n1. Cloud infrastructure and SaaS tooling: Engineering managers (M2 level and above) may self-approve up to INR 5,00,000 for recurring cloud/SaaS spend, given the operational necessity of infrastructure purchases.\n\n2. Hardware purchases (laptops, servers, peripherals): standard company-wide threshold applies (see general Procurement Policy, current version).\n\n3. Contractor/consulting engagements: require VP Engineering approval regardless of amount.\n\n4. This matrix is reviewed each fiscal quarter by the Engineering Leadership Team."
+  },
+  {
+    "doc_id": "dept-marketing-matrix-2024",
+    "title": "Marketing Department Approval Matrix",
+    "version": "2024",
+    "effective_date": "2024-06-01",
+    "scope": "department",
+    "department": "Marketing",
+    "text": "MARKETING DEPARTMENT APPROVAL MATRIX — Effective June 1, 2024\n\n1. Campaign and media-buy spend: Marketing managers may self-approve up to INR 3,00,000 per campaign.\n\n2. Agency retainers: require Marketing Director approval regardless of amount.\n\n3. Event sponsorships: require both Marketing Director and Finance Business Partner sign-off above INR 1,00,000.\n\n4. All other purchases fall back to the general company Procurement Policy in effect at the time of purchase."
+  },
+  {
+    "doc_id": "employee-handbook-2022",
+    "title": "Employee Handbook (Legacy)",
+    "version": "2022",
+    "effective_date": "2022-03-01",
+    "scope": "company-wide",
+    "department": null,
+    "superseded_by": null,
+    "text": "EMPLOYEE HANDBOOK — Section 7: Expenses and Purchasing (2022 edition, retained for historical reference only)\n\nEmployees should refer to the Procurement Policy for purchase approval limits, which at time of writing allowed self-approval up to INR 1,00,000. Note: figures in this handbook are illustrative from 2022 and may not reflect current policy; always check the latest Procurement Policy for current thresholds. This handbook has not been updated since 2022 and several finance-related sections are known to be outdated."
+  },
+  {
+    "doc_id": "travel-reimbursement-policy-2025",
+    "title": "Travel & Reimbursement Policy",
+    "version": "2025",
+    "effective_date": "2025-04-01",
+    "scope": "company-wide",
+    "department": null,
+    "text": "TRAVEL & REIMBURSEMENT POLICY — Effective April 1, 2025\n\n1. Domestic Travel\nEconomy class for flights under 5 hours; employees may upgrade at their own cost. Per-diem for meals is INR 2,500/day in metro cities and INR 1,800/day in non-metro cities.\n\n2. International Travel\nPremium economy is permitted for flights over 8 hours, subject to manager approval. Per-diem is USD 60/day, region-adjusted per the Finance intranet page.\n\n3. Hotel Booking\nEmployees should use the corporate travel portal. Bookings outside the portal require pre-approval and are reimbursed only up to the portal's equivalent rate.\n\n4. Reimbursement Timeline\nTravel expense reports are reimbursed within 7 business days of submission with itemized receipts.\n\n5. Non-Reimbursable Items\nAlcohol, mini-bar charges, personal entertainment, and traffic/parking fines are not reimbursable under any circumstance."
+  },
+  {
+    "doc_id": "wfh-equipment-policy-2025",
+    "title": "Remote Work Equipment Policy",
+    "version": "2025",
+    "effective_date": "2025-03-10",
+    "scope": "company-wide",
+    "department": null,
+    "text": "REMOTE WORK EQUIPMENT POLICY — Effective March 10, 2025\n\n1. Eligible Equipment\nFull-time remote or hybrid employees may request a one-time home-office stipend of INR 25,000 for a chair, monitor, and desk setup.\n\n2. Laptop Provisioning\nCompany laptops remain company property and must be returned within 10 business days of separation. Lost or damaged equipment due to negligence may be charged back to the employee at depreciated value.\n\n3. Internet Reimbursement\nA flat INR 1,500/month internet allowance is provided to employees classified as fully remote. Hybrid employees are not eligible for this allowance.\n\n4. Approval\nRequests are self-approved via the HR portal; no manager sign-off is required for amounts within the stipend limit."
+  },
+  {
+    "doc_id": "code-of-conduct-2023",
+    "title": "Code of Conduct",
+    "version": "2023",
+    "effective_date": "2023-09-01",
+    "scope": "company-wide",
+    "department": null,
+    "text": "CODE OF CONDUCT — Effective September 1, 2023\n\n1. Conflicts of Interest\nEmployees must disclose any financial relationship with a vendor, supplier, or contractor being considered for a company purchase, regardless of purchase amount.\n\n2. Gifts and Hospitality\nGifts from vendors above INR 5,000 in value must be declined or surrendered to HR.\n\n3. Confidentiality\nEmployees must not share internal pricing, vendor negotiation terms, or unpublished financial data outside the company.\n\n4. Reporting Violations\nSuspected violations should be reported via the anonymous ethics hotline or directly to HR."
+  }
+]
