@@ -50,16 +50,28 @@ class GroqProvider(LLMProvider):
 
     def complete_json(self, system: str, user: str, schema_hint: str = "") -> dict:
         strict_system = f"{system}\n\n{schema_hint}\nRespond with ONLY valid JSON."
-        resp = self.client.chat.completions.create(
-            model=self.model,
-            temperature=self.temperature,
-            max_tokens=self.max_tokens,
-            response_format={"type": "json_object"},
-            messages=[
-                {"role": "system", "content": strict_system},
-                {"role": "user", "content": user},
-            ],
-        )
+        messages = [
+            {"role": "system", "content": strict_system},
+            {"role": "user", "content": user},
+        ]
+        try:
+            resp = self.client.chat.completions.create(
+                model=self.model,
+                temperature=self.temperature,
+                max_tokens=max(self.max_tokens, 2048),
+                response_format={"type": "json_object"},
+                messages=messages,
+            )
+        except Exception as exc:
+            if "json_validate_failed" in str(exc) or "Failed to validate JSON" in str(exc):
+                resp = self.client.chat.completions.create(
+                    model=self.model,
+                    temperature=self.temperature,
+                    max_tokens=max(self.max_tokens, 2048),
+                    messages=messages,
+                )
+            else:
+                raise
         text = resp.choices[0].message.content or "{}"
         try:
             return json.loads(text)

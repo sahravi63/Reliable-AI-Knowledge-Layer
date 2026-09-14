@@ -50,6 +50,7 @@ class PipelineState(TypedDict, total=False):
 
     # --- hallucination / groundedness ---
     claims: list[Claim]
+    claims_checked: bool
     faithfulness_ratio: float
     regeneration_count: int
 

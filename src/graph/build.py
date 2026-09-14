@@ -47,8 +47,8 @@ def route_after_router(state: PipelineState) -> str:
 
 
 def route_after_grading(state: PipelineState) -> str:
-    """Variant A skips grading entirely (handled by graph structure below).
-    From B onward: sufficiency met -> proceed; not met -> depends on variant."""
+    """Variant A/B still run grading, but its result never gates routing.
+    From C onward: sufficiency met -> proceed; not met -> correction loop."""
     if state.get("sufficiency_met", False):
         return "proceed"
 
@@ -127,8 +127,7 @@ def build_graph():
 
     graph.add_conditional_edges("router", route_after_router, {"retrieve": "retrieve", "generate": "generate"})
 
-    # Variant A has no grading step; that's simulated by grading always running
-    # but route_after_grading treating "proceed" as the only path for A/B.
+    # Variant A retains grading for consistent chunk metadata, but A/B always proceed.
     graph.add_edge("retrieve", "grade")
 
     graph.add_conditional_edges(

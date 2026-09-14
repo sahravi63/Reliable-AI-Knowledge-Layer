@@ -31,11 +31,23 @@ def evidence_status_node(state: PipelineState) -> PipelineState:
     faithfulness_ratio = state.get("faithfulness_ratio", 1.0)
     regeneration_count = state.get("regeneration_count", 0)
     threshold = settings.faithfulness_threshold
+    answer = str(state.get("answer", "")).lower()
+    explicit_gap = any(
+        phrase in answer
+        for phrase in (
+            "cannot be determined from context",
+            "insufficient context",
+            "not enough information",
+            "unable to determine",
+        )
+    )
 
     if not sufficiency_met:
         status = "INSUFFICIENT EVIDENCE"
     elif conflict_detected and not conflict_resolved:
         status = "CONFLICTING"
+    elif explicit_gap:
+        status = "PARTIALLY VERIFIED"
     elif faithfulness_ratio >= threshold:
         status = "VERIFIED"
     elif regeneration_count >= settings.max_regenerations:

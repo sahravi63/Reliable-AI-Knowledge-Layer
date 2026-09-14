@@ -51,10 +51,21 @@ def hallucination_grader_node(state: PipelineState) -> PipelineState:
         for c in raw_claims
     ]
 
+    answer = str(state.get("answer", "")).strip()
+    insufficient_answer = (
+        len(answer) <= 160
+        and any(
+            phrase in answer.lower()
+            for phrase in ("insufficient evidence", "cannot determine", "not enough information")
+        )
+    )
+
     if claims:
         faithfulness_ratio = sum(1 for c in claims if c["supported"]) / len(claims)
+    elif insufficient_answer:
+        faithfulness_ratio = 1.0
     else:
-        faithfulness_ratio = 1.0  # nothing to check (e.g. an "insufficient evidence" answer)
+        faithfulness_ratio = 0.0
 
     trace = state.get("trace", [])
     trace.append(
@@ -62,4 +73,10 @@ def hallucination_grader_node(state: PipelineState) -> PipelineState:
         f"claims supported -> faithfulness_ratio={faithfulness_ratio:.2f}"
     )
 
-    return {**state, "claims": claims, "faithfulness_ratio": faithfulness_ratio, "trace": trace}
+    return {
+        **state,
+        "claims": claims,
+        "claims_checked": True,
+        "faithfulness_ratio": faithfulness_ratio,
+        "trace": trace,
+    }
