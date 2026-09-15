@@ -3,9 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional
 
-import chromadb
-from sentence_transformers import SentenceTransformer
-
 from src.config import CHROMA_DIR, settings
 
 COLLECTION_NAME = "policy_docs"
@@ -33,12 +30,16 @@ class Retriever:
     @property
     def embedder(self):
         if self._embedder is None:
+            from sentence_transformers import SentenceTransformer
+
             self._embedder = SentenceTransformer(settings.embedding_model)
         return self._embedder
 
     @property
     def collection(self):
         if self._collection is None:
+            import chromadb
+
             self._client = chromadb.PersistentClient(path=str(CHROMA_DIR))
             self._collection = self._client.get_collection(COLLECTION_NAME)
         return self._collection

@@ -15,9 +15,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import streamlit as st
 
 from src.config import settings
-from src.graph.build import run_pipeline
 
 st.set_page_config(page_title="Reliable AI Knowledge Layer", page_icon="🛡️", layout="wide")
+
+st.markdown(
+    """
+    <style>
+    div[data-testid="stTextArea"] textarea {
+        min-height: 180px !important;
+        max-height: 180px !important;
+        resize: vertical;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 STATUS_STYLE = {
     "VERIFIED": ("✅", "#1a7f37", "Sufficient, non-conflicting evidence — all claims supported."),
@@ -78,6 +90,12 @@ def render_trace(state: dict):
         st.text(line)
 
 
+def _run_pipeline_lazily(query: str, variant: str):
+    from src.graph.build import run_pipeline
+
+    return run_pipeline(query, variant=variant)
+
+
 def main():
     st.title("🛡️ Reliable AI Knowledge Layer")
     st.caption(
@@ -104,13 +122,17 @@ def main():
         st.code("What's the self-approval threshold for a general purchase?", language=None)
         st.code("What is the maternity leave policy?", language=None)
 
-    query = st.text_input("Ask a policy question", placeholder="e.g. Can I approve a ₹3,00,000 purchase myself?")
+    query = st.text_area(
+        "Ask a policy question",
+        placeholder="e.g. Can I approve a ₹3,00,000 purchase myself?",
+        height=180,
+    )
     run = st.button("Ask", type="primary")
 
     if run and query.strip():
         with st.spinner("Running pipeline..."):
             try:
-                final_state = run_pipeline(query, variant=variant)
+                final_state = _run_pipeline_lazily(query, variant)
             except Exception as e:
                 st.error(f"Pipeline error: {e}")
                 st.info(
